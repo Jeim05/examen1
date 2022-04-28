@@ -1,14 +1,16 @@
 package examen1;
 
+import java.util.Iterator;
 import java.util.List;
 
 import hospital.Hospital;
 import pruebaCovid.PruebaCovid19;
+import pruebaCovid.PruebaPCR;
+import pruebaCovid.PruebaRapida;
 
 public abstract class OMS {
 	private List<Paciente> pacientes;
 	private List<PruebaCovid19> resultadoList;
-	private PruebaCovid19 pruebaCovid19;
 	
 	protected abstract boolean isGamHospital();
 	public abstract Hospital getNombreHospital(); 
@@ -18,12 +20,26 @@ public abstract class OMS {
 	this.pacientes = pacientes;
 	}
 	
-
 	private void diagnosticar() {
-		
+		if(isGamHospital()) {
+			for (Paciente paciente : pacientes) {
+				PruebaPCR pcr = new PruebaPCR(paciente);
+				this.resultadoList.add(pcr);
+			}
+		}
+		else {
+			for (Paciente paciente : pacientes) {
+				PruebaRapida rapida = new PruebaRapida(paciente);
+				this.resultadoList.add(rapida);
+			}
+		}
 	}
 	
 	public void imprimirReporte() {
+		System.out.println(getNombreHospital());
+		for (PruebaCovid19 prueba : resultadoList) {
+			System.out.println(prueba.getNombrePaciente() +' '+ prueba.isPositiveCase());
+		}
 		
 	}
 }

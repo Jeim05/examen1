@@ -3,20 +3,22 @@ package pruebaCovid;
 import examen1.Paciente;
 
 public final class PruebaRapida implements PruebaCovid19{
+	Paciente paciente;
 	
 	public PruebaRapida(Paciente paciente) {
-		
+		this.paciente=paciente;
 	}
 
 	@Override
 	public boolean isPositiveCase() {
-		// TODO Auto-generated method stub
+		if(this.paciente.getTemperatura()>= 37 && this.paciente.getEdad()>=60) {
+		return true;
+		}
 		return false;
 	}
 
 	@Override
 	public String getNombrePaciente() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getNombrePaciente();
 	}
 }

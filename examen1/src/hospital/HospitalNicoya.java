@@ -6,21 +6,22 @@ import examen1.OMS;
 import examen1.Paciente;
 
 public class HospitalNicoya extends OMS {
+	private Hospital hospital; 
 	
 	public HospitalNicoya(List<Paciente> pacientes) {
 		super(pacientes);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected boolean isGamHospital() {
-		// TODO Auto-generated method stub
+			if(this.hospital.HospitalMexico.name()== "Hospital Mexico") {
+				return true;
+			}
 		return false;
 	}
 	@Override
 	public Hospital getNombreHospital() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.hospital.HospitalAnexion;
 	}
 	
 	
