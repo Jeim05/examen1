@@ -19,6 +19,6 @@ public final class PruebaRapida implements PruebaCovid19{
 
 	@Override
 	public String getNombrePaciente() { //sobreescritura de metodos
-		return this.getNombrePaciente();
+		return this.paciente.getNombre();
 	}
 }
