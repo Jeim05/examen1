@@ -26,8 +26,8 @@ public class test {
 		oms.imprimirReporte();
 		
 		
-		//oms = new HospitalNicoya(pacientes);//Polimorfismo
-		//oms.imprimirReporte();
+		oms = new HospitalNicoya(pacientes);//Polimorfismo
+		oms.imprimirReporte();
 		
 		
 	}
