@@ -1,5 +1,6 @@
 package examen1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hospital.Hospital;
@@ -17,6 +18,7 @@ public abstract class OMS {
 	
 	public OMS(List<Paciente> pacientes) {
 	this.pacientes = pacientes;
+	this.resultadoList = new ArrayList<>();
 	}
 	
 	private void diagnosticar() { //polimorfismo

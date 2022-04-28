@@ -23,11 +23,11 @@ public class test {
 		pacientes.add(paciente5);
 		
 		oms = new HospitalMexico(pacientes); //Polimorfismo
-		
 		oms.imprimirReporte();
 		
-		oms = new HospitalNicoya(pacientes);//Polimorfismo
-		oms.imprimirReporte();
+		
+		//oms = new HospitalNicoya(pacientes);//Polimorfismo
+		//oms.imprimirReporte();
 		
 		
 	}
